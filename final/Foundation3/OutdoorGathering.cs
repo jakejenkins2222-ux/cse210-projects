@@ -1,0 +1,19 @@
+public class OutdoorGathering : Event
+{
+    private string _weatherForecast;
+
+    public OutdoorGathering(string title, string description, string date, string time, Address address, string weatherForecast) : base(title, description, date, time, address)
+    {
+        _weatherForecast = weatherForecast;
+    }
+
+    public string GetFullDetails()
+    {
+        return GetStandardDetails() + " Event Type: Outdoor Gathering" + "\n" + " Weather Forecast: " + _weatherForecast;
+    }
+
+    public string GetShortDescription()
+    {
+        return "Outdoor Gathering: " + GetTitle() + " on " + GetDate() + "\n";
+    }
+}
